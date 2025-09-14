@@ -29,13 +29,13 @@ return [
         'title' => 'سەردێڕ',
         'title-hint' => '(بە ق',
         'content' => 'Content',
-        'logo-type'          => 'جۆری لۆگۆ',
-        'browse-another'     => 'لۆگۆیەکی تر گەڕان',
-        'paste-url'          => 'URL چاپکردن',
-        'logo'               => 'لۆگۆ',
-        'logo-hint'          => '（پەڕگەیی بگەڕێنەوە）',
-        'logo-url'           => 'لینکی لۆگۆ',
-        'logo-url-hint'      => '（لینکێکی وێنەی پەڕگە لێرە چاپبکەوە）',
+        'logo-type' => 'جۆری لۆگۆ',
+        'browse-another' => 'لۆگۆیەکی تر گەڕان',
+        'paste-url' => 'URL چاپکردن',
+        'logo' => 'لۆگۆ',
+        'logo-hint' => '（پەڕگەیی بگەڕێنەوە）',
+        'logo-url' => 'لینکی لۆگۆ',
+        'logo-url-hint' => '（لینکێکی وێنەی پەڕگە لێرە چاپبکەوە）',
     ],
     'resource_name' => [
         'singular' => 'Email Template',
@@ -63,5 +63,5 @@ return [
         'singular' => 'بابەتی چوونەژوورەوەی ڕووناکی ئیمەیڵ',
         'plural' => 'بابەتەکانی چوونەژوورەوەی ڕووناکی ئیمەیڵ',
     ],
-    
+
 ];

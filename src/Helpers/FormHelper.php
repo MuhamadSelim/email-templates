@@ -10,7 +10,7 @@ class FormHelper implements FormHelperInterface
     {
         return collect(config('filament-email-templates.languages'))->mapWithKeys(function ($langVal, $langKey) {
             return [
-                $langKey => '<span class="flag-icon flag-icon-'.$langVal["flag-icon"].'"></span> '.$langVal["display"],
+                $langKey => '<span class="flag-icon flag-icon-'.$langVal['flag-icon'].'"></span> '.$langVal['display'],
             ];
         })->toArray();
     }
@@ -45,7 +45,7 @@ class FormHelper implements FormHelperInterface
 
         if ($handle = opendir($dir)) {
             while (false !== ($entry = readdir($handle))) {
-                if ($entry == "." || $entry == "..") {
+                if ($entry == '.' || $entry == '..') {
                     continue;
                 }
                 if (substr($entry, 0, 1) == '_') {

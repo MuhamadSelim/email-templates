@@ -29,13 +29,13 @@ return [
         'title' => 'Başlık',
         'title-hint' => '(E-postanın en üstünde büyük olarak görüntülenir)',
         'content' => 'İçerik',
-        'logo-type'          => 'Logo Türü',
-        'browse-another'     => 'Başka birini gözat',
-        'paste-url'          => 'URL yapıştır',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Resim gözat)',
-        'logo-url'           => 'Logo URL\'si',
-        'logo-url-hint'      => '(Resim URL\'sini yapıştırın)',
+        'logo-type' => 'Logo Türü',
+        'browse-another' => 'Başka birini gözat',
+        'paste-url' => 'URL yapıştır',
+        'logo' => 'Logo',
+        'logo-hint' => '(Resim gözat)',
+        'logo-url' => 'Logo URL\'si',
+        'logo-url-hint' => '(Resim URL\'sini yapıştırın)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'E-posta Şablon Teması',
         'plural' => 'E-posta Şablon Temaları',
     ],
-    
+
 ];

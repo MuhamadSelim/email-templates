@@ -9,12 +9,14 @@ use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
 
 class UserLoginEmail extends Mailable
 {
+    use BuildGenericEmail;
     use Queueable;
     use SerializesModels;
-    use BuildGenericEmail;
 
     public $template = 'user-login';
+
     public $user;
+
     public $sendTo;
 
     /**

@@ -64,5 +64,5 @@ return [
         'singular' => 'E-mail sablon téma',
         'plural' => 'E-mail sablon témák',
     ],
-    
+
 ];

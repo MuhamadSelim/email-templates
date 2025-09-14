@@ -31,29 +31,29 @@ class InstallCommand extends Command
 
     public function handle()
     {
-        $this->info("Installing Email Templates");
+        $this->info('Installing Email Templates');
 
         if ($this->shouldPublishConfigFile) {
             $this->comment('Publishing config file...');
 
-            $this->callSilently("vendor:publish", [
-                '--tag' => "filament-email-templates-config",
+            $this->callSilently('vendor:publish', [
+                '--tag' => 'filament-email-templates-config',
             ]);
         }
 
         if ($this->shouldPublishAssets) {
             $this->comment('Publishing assets...');
 
-            $this->callSilently("vendor:publish", [
-                '--tag' => "filament-email-templates-assets",
+            $this->callSilently('vendor:publish', [
+                '--tag' => 'filament-email-templates-assets',
             ]);
         }
 
         if ($this->shouldPublishMigrations) {
             $this->comment('Publishing migration...');
 
-            $this->callSilently("vendor:publish", [
-                '--tag' => "filament-email-templates-migrations",
+            $this->callSilently('vendor:publish', [
+                '--tag' => 'filament-email-templates-migrations',
             ]);
         }
 
@@ -67,8 +67,8 @@ class InstallCommand extends Command
         if ($this->shouldPublishSeeders) {
             $this->comment('Publishing seeders...');
 
-            $this->callSilently("vendor:publish", [
-                '--tag' => "filament-email-templates-seeds",
+            $this->callSilently('vendor:publish', [
+                '--tag' => 'filament-email-templates-seeds',
             ]);
         }
 
@@ -80,7 +80,7 @@ class InstallCommand extends Command
             }
         }
 
-        $this->info("All Done");
+        $this->info('All Done');
 
         return Command::SUCCESS;
     }

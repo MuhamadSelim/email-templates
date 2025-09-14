@@ -64,5 +64,5 @@ return [
         'singular' => 'E-Mail-Vorlagen-Thema',
         'plural' => 'E-Mail-Vorlagen-Themen',
     ],
-    
+
 ];

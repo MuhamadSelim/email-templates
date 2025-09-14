@@ -3,18 +3,16 @@
 namespace Visualbuilder\EmailTemplates\Resources\EmailTemplateResource\Pages;
 
 use Filament\Actions\Action;
-use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
-use Filament\Actions;
+use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource;
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\File;
 
 class EditEmailTemplate extends EditRecord
 {
@@ -24,8 +22,7 @@ class EditEmailTemplate extends EditRecord
     {
         return [
             Action::make('back')->label(__('Back'))
-            ->url(EmailTemplateResource::getUrl())
-            ,
+                ->url(EmailTemplateResource::getUrl()),
             ViewAction::make()->label(__('Preview'))->modalContent(fn (EmailTemplate $record): View => view(
                 'vb-email-templates::forms.components.iframe',
                 ['record' => $record],
@@ -43,7 +40,7 @@ class EditEmailTemplate extends EditRecord
     {
         $data['logo_type'] = 'browse_another';
 
-        if(!is_null($data['logo']) && Str::isUrl($data['logo'])) {
+        if (! is_null($data['logo']) && Str::isUrl($data['logo'])) {
             $data['logo_type'] = 'paste_url';
             $data['logo_url'] = $data['logo'];
         }
@@ -53,7 +50,7 @@ class EditEmailTemplate extends EditRecord
 
     protected function handleRecordUpdate(Model $record, array $data): Model
     {
-        $emailTemplateResource = new EmailTemplateResource();
+        $emailTemplateResource = new EmailTemplateResource;
         $sortedData = $emailTemplateResource->handleLogo($data);
 
         // deleting previous logo

@@ -2,11 +2,8 @@
 
 namespace Visualbuilder\EmailTemplates;
 
-
 use Illuminate\Support\Facades\View;
 use Visualbuilder\EmailTemplates\Contracts\TokenReplacementInterface;
-use Visualbuilder\EmailTemplates\Models\EmailTemplate;
-
 
 class DefaultTokenHelper implements TokenReplacementInterface
 {
@@ -15,27 +12,20 @@ class DefaultTokenHelper implements TokenReplacementInterface
      *
      * @param  string  $content  The content with tokens to be replaced
      * @param  array  $models  The models containing the values for the tokens
-     *
      * @return string The content with replaced tokens
      */
     public function replaceTokens(string $content, $models): string
     {
         $content = $this->replaceSingularTokens($models, $content);
 
-        $content = $this->replaceConfigTokens($models,$content);
+        $content = $this->replaceConfigTokens($models, $content);
 
         $content = $this->replaceModelTokens($models, $content);
 
         return $this->replaceButtonTokens($models, $content);
     }
 
-
-
-    /**
-     *
-     * @return string
-     */
-    protected function replaceSingularTokens( $models, string $content): string
+    protected function replaceSingularTokens($models, string $content): string
     {
         /**
          * Replace singular tokens for password reset and validations
@@ -46,10 +36,11 @@ class DefaultTokenHelper implements TokenReplacementInterface
                 $content = str_replace("##$key##", $models->{$key}, $content);
             }
         }
+
         return $content;
     }
 
-    protected function replaceConfigTokens( $models, string $content): string
+    protected function replaceConfigTokens($models, string $content): string
     {
         /**
          * Replace config tokens.
@@ -74,7 +65,7 @@ class DefaultTokenHelper implements TokenReplacementInterface
         return $content;
     }
 
-    protected function replaceModelTokens( $models, string $content): string
+    protected function replaceModelTokens($models, string $content): string
     {
         /**
          * Replace model-attribute tokens.
@@ -87,11 +78,12 @@ class DefaultTokenHelper implements TokenReplacementInterface
             for ($i = 0; $i < count($matches[0]); $i++) {
                 $modelKey = $matches[1][$i];
                 $attributeKey = $matches[2][$i];
-                $replacement = (isset($models->$modelKey) && isset($models->$modelKey->$attributeKey))?$models->$modelKey->$attributeKey:"";
+                $replacement = (isset($models->$modelKey) && isset($models->$modelKey->$attributeKey)) ? $models->$modelKey->$attributeKey : '';
                 $content = str_replace($matches[0][$i], $replacement, $content);
 
             }
         }
+
         return $content;
     }
 
@@ -101,37 +93,34 @@ class DefaultTokenHelper implements TokenReplacementInterface
 
         $title = $url = '';
         if (preg_match('/\{\{button.*?\}\}/', $content, $matches)) {
-            if ($check1 = preg_match("/(?<=url=').*?(?='\s)/", $matches[ 0 ], $url)) {
-                $url = $url[ 0 ];
+            if ($check1 = preg_match("/(?<=url=').*?(?='\s)/", $matches[0], $url)) {
+                $url = $url[0];
             }
-            if ($check2 = preg_match("/(?<=title=').*?(?=')/", $matches[ 0 ], $title)) {
-                $title = $title[ 0 ];
+            if ($check2 = preg_match("/(?<=title=').*?(?=')/", $matches[0], $title)) {
+                $title = $title[0];
             }
             if ($check1 && $check2) {
 
                 return View::make('vb-email-templates::email.parts._button', [
-                        'url' => $url,
-                        'title' => $title,
-                        'data' => ['theme' => $emailTemplate->theme->colours],
+                    'url' => $url,
+                    'title' => $title,
+                    'data' => ['theme' => $emailTemplate->theme->colours],
                 ])
-                        ->render();
+                    ->render();
             }
-        };
+        }
 
         return '';
     }
 
     /**
      * @param  array|string  $content
-     *
-     * @return string
      */
-    protected function replaceButtonTokens( $models, string $content): string
+    protected function replaceButtonTokens($models, string $content): string
     {
         /**
          *Replace {{button url='xxx' title='xxx'}}
          */
-
         if (isset($models->emailTemplate)) {
             $button = $this->buildEmailButton($content, $models->emailTemplate);
             $content = self::replaceButtonToken($content, $button);
@@ -139,7 +128,6 @@ class DefaultTokenHelper implements TokenReplacementInterface
 
         return $content;
     }
-
 
     private static function replaceButtonToken($content, $button)
     {
@@ -150,5 +138,4 @@ class DefaultTokenHelper implements TokenReplacementInterface
 
         return $content;
     }
-
 }

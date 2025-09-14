@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema Templat Email',
         'plural' => 'Tema Templat Email',
     ],
-    
+
 ];

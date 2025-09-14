@@ -2,9 +2,9 @@
 
 namespace Visualbuilder\EmailTemplates\Notifications;
 
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Visualbuilder\EmailTemplates\Mail\UserPasswordResetSuccessEmail;
 
@@ -18,10 +18,7 @@ class UserPasswordResetNotification extends Notification
      *
      * @return void
      */
-    public function __construct()
-    {
-
-    }
+    public function __construct() {}
 
     /**
      * Get the notification's delivery channels.
@@ -53,6 +50,6 @@ class UserPasswordResetNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        return [ ];
+        return [];
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Visualbuilder\EmailTemplates\Facades;
 
-use Visualbuilder\EmailTemplates\Contracts\TokenReplacementInterface;
 use Illuminate\Support\Facades\Facade;
+use Visualbuilder\EmailTemplates\Contracts\TokenReplacementInterface;
 
 class TokenHelper extends Facade
 {

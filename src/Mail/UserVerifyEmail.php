@@ -10,11 +10,12 @@ use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
 
 class UserVerifyEmail extends Mailable
 {
+    use BuildGenericEmail;
     use Queueable;
     use SerializesModels;
-    use BuildGenericEmail;
 
     public $template = 'user-verify-email';
+
     public $sendTo;
 
     /**

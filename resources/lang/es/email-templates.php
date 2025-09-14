@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema de plantilla de correo electrónico',
         'plural' => 'Temas de plantillas de correo electrónico',
     ],
-    
+
 ];

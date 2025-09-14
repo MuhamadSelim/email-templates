@@ -60,10 +60,10 @@ return [
         'title-hint' => '(Mostrato grande in cima all\'email)',
         'content' => 'Contenuto',
     ],
-    
+
     'theme_resource_name' => [
         'singular' => 'Tema Modello Email',
         'plural' => 'Temi Modelli Email',
     ],
-    
+
 ];

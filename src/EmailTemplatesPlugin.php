@@ -41,15 +41,15 @@ class EmailTemplatesPlugin implements Plugin
 
     public function shouldRegisterNavigation(): bool
     {
-        return $this->evaluate($this->navigation) ?? config('filament-email-templates.navigation.enabled',true);
+        return $this->evaluate($this->navigation) ?? config('filament-email-templates.navigation.enabled', true);
     }
 
     public function navigationGroup(string|Closure|null $navigationGroup): static
     {
         $this->navigationGroup = $navigationGroup;
+
         return $this;
     }
-
 
     public function getNavigationGroup(): ?string
     {

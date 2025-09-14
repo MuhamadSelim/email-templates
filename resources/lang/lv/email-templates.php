@@ -29,13 +29,13 @@ return [
         'title' => 'Virsraksts',
         'title-hint' => '(Parādās lielā izmērā pašā e-pasta augšpusē)',
         'content' => 'Saturs',
-        'logo-type'          => 'Logotipa tips',
-        'browse-another'     => 'Pārlūkot citu',
-        'paste-url'          => 'Ielīmēt URL',
-        'logo'               => 'Logotips',
-        'logo-hint'          => '（Pārlūkot attēlu）',
-        'logo-url'           => 'Logotipa URL',
-        'logo-url-hint'      => '（Ielīmējiet attēla URL šeit）',
+        'logo-type' => 'Logotipa tips',
+        'browse-another' => 'Pārlūkot citu',
+        'paste-url' => 'Ielīmēt URL',
+        'logo' => 'Logotips',
+        'logo-hint' => '（Pārlūkot attēlu）',
+        'logo-url' => 'Logotipa URL',
+        'logo-url-hint' => '（Ielīmējiet attēla URL šeit）',
     ],
     'resource_name' => [
         'singular' => 'E-pasta veidne',
@@ -63,5 +63,5 @@ return [
         'singular' => 'E-pasta veidnes tēma',
         'plural' => 'E-pasta veidnes tēmas',
     ],
-    
+
 ];

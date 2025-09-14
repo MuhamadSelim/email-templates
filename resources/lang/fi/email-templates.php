@@ -64,5 +64,5 @@ return [
         'singular' => 'Sähköpostimalliteema',
         'plural' => 'Sähköpostimalliteemat',
     ],
-    
+
 ];

@@ -3,20 +3,19 @@
 namespace Visualbuilder\EmailTemplates\Models;
 
 use Exception;
-use Illuminate\Support\Collection;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Visualbuilder\EmailTemplates\Database\Factories\EmailTemplateFactory;
 use Visualbuilder\EmailTemplates\Facades\TokenHelper;
-
 
 /**
  * @property int $id
@@ -55,7 +54,7 @@ class EmailTemplate extends Model
         'language',
         'logo',
         'cc',
-        'bcc'
+        'bcc',
 
     ];
 
@@ -70,6 +69,7 @@ class EmailTemplate extends Model
         'cc' => 'array',
         'bcc' => 'array',
     ];
+
     /**
      * @var string[]
      */
@@ -87,7 +87,7 @@ class EmailTemplate extends Model
         parent::__construct($attributes);
         $this->setTableFromConfig();
         // Include the theme foreign key as a fillable attribute
-        $this->fillable[] = config('filament-email-templates.theme_table_name') . '_id';
+        $this->fillable[] = config('filament-email-templates.theme_table_name').'_id';
     }
 
     /**
@@ -129,11 +129,11 @@ class EmailTemplate extends Model
     {
         $cacheKey = "email_by_key_{$key}_{$language}";
 
-        //For multi site domains this key will need to include the site_id
+        // For multi site domains this key will need to include the site_id
         return Cache::remember($cacheKey, now()->addMinutes(60), function () use ($key, $language) {
             return self::query()
                 ->language($language ?? config('filament-email-templates.default_locale'))
-                ->where("key", $key)
+                ->where('key', $key)
                 ->firstOrFail();
         });
     }
@@ -175,7 +175,7 @@ class EmailTemplate extends Model
      */
     public function theme()
     {
-        return $this->belongsTo(EmailTemplateTheme::class, config('filament-email-templates.theme_table_name') . '_id')->withDefault(function ($model) {
+        return $this->belongsTo(EmailTemplateTheme::class, config('filament-email-templates.theme_table_name').'_id')->withDefault(function ($model) {
             return EmailTemplateTheme::where('is_default', true)->first();
         });
     }
@@ -192,7 +192,6 @@ class EmailTemplate extends Model
          * This means an extra http request
          *  Below method includes the content directly as base64 encoded
          */
-
         $data = $this->getEmailPreviewData();
         $content = view($this->view_path, ['data' => $data])->render();
 
@@ -222,10 +221,10 @@ class EmailTemplate extends Model
      */
     public static function createEmailPreviewData()
     {
-        $models = (object)[];
+        $models = (object) [];
 
         $userModel = config('filament-email-templates.recipients')[0];
-        //Setup some data for previewing email template
+        // Setup some data for previewing email template
         $models->user = $userModel::first();
         $models->tokenUrl = URL::to('/');
         $models->verificationUrl = URL::to('/');
@@ -239,8 +238,6 @@ class EmailTemplate extends Model
     /**
      * Efficient method to return requested template locale or default language template in one query
      *
-     * @param Builder $query
-     * @param $language
      *
      * @return Builder
      */
@@ -250,57 +247,50 @@ class EmailTemplate extends Model
 
         return $query->whereIn('language', $languages)
             ->orderByRaw(
-                "(CASE WHEN language = ? THEN 1 ELSE 2 END)",
+                '(CASE WHEN language = ? THEN 1 ELSE 2 END)',
                 [$language]
             );
     }
 
-    /**
-     * @return Attribute
-     */
     public function viewPath(): Attribute
     {
         return new Attribute(
-            get: fn() => config('filament-email-templates.template_view_path') . '.' . $this->view
+            get: fn () => config('filament-email-templates.template_view_path').'.'.$this->view
         );
     }
 
-    /**
-     * @return bool
-     */
     public function getMailableExistsAttribute(): bool
     {
         $className = Str::studly($this->key);
-        $filePath = app_path(config('filament-email-templates.mailable_directory') . "/{$className}.php");
+        $filePath = app_path(config('filament-email-templates.mailable_directory')."/{$className}.php");
 
         return File::exists($filePath);
     }
 
     /**
      * @return string
+     *
      * @throws Exception
      */
     public function getMailableClass()
     {
         $className = Str::studly($this->key);
         $directory = str_replace('/', '\\', config('filament-email-templates.mailable_directory', 'Mail/Visualbuilder/EmailTemplates'));
-        $fullClassName = "App\\" . rtrim($directory, '\\') . "\\{$className}";
+        $fullClassName = 'App\\'.rtrim($directory, '\\')."\\{$className}";
 
-        if (!class_exists($fullClassName)) {
+        if (! class_exists($fullClassName)) {
             throw new Exception("Mailable class {$fullClassName} does not exist.");
         }
 
         return $fullClassName;
     }
 
-
     public function getLogoAttribute(): string
     {
-        //Get Database logo or config logo
+        // Get Database logo or config logo
         $logo = $this->attributes['logo'] ?? config('filament-email-templates.logo');
 
         // Return the logo if it's a full URL, otherwise, return the asset URL.
         return Str::isUrl($logo) ? $logo : asset($logo);
     }
-
 }

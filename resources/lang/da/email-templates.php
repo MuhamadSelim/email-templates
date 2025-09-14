@@ -64,5 +64,5 @@ return [
         'singular' => 'E-mailskabelontema',
         'plural' => 'E-mailskabelontemaer',
     ],
-    
+
 ];

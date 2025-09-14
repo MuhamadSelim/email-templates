@@ -64,5 +64,5 @@ return [
         'singular' => 'Posta-elektroniko Txantiloia',
         'plural' => 'Posta-elektroniko Txantilioen Temak',
     ],
-    
+
 ];

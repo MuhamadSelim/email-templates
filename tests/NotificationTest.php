@@ -15,8 +15,7 @@ it('does not send locked out notification when disabled', function () {
         'password' => 'password',
     ]);
 
-    $user->notify(new UserLockoutNotification());
+    $user->notify(new UserLockoutNotification);
 
     Notification::assertNothingSent();
 });
-

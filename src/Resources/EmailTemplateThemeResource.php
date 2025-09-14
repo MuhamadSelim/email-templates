@@ -2,38 +2,34 @@
 
 namespace Visualbuilder\EmailTemplates\Resources;
 
-use Filament\Pages\Enums\SubNavigationPosition;
-use Filament\Schemas\Schema;
-use Filament\Schemas\Components\Group;
-use Filament\Schemas\Components\Section;
-use Filament\Forms\Components\ViewField;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\CreateAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\ColorPicker;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Actions\EditAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\CreateAction;
-use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\ListEmailTemplateThemes;
-use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\CreateEmailTemplateTheme;
-use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\EditEmailTemplateTheme;
-use Filament\Forms;
+use Filament\Forms\Components\ViewField;
+use Filament\Pages\Enums\SubNavigationPosition;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Components\Group;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Visualbuilder\EmailTemplates\EmailTemplatesPlugin;
 use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 use Visualbuilder\EmailTemplates\Models\EmailTemplateTheme;
-use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages;
+use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\CreateEmailTemplateTheme;
+use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\EditEmailTemplateTheme;
+use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\ListEmailTemplateThemes;
 
 class EmailTemplateThemeResource extends Resource
 {
     protected static ?string $model = EmailTemplateTheme::class;
-
 
     public static function shouldRegisterNavigation(): bool
     {

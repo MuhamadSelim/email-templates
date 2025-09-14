@@ -29,13 +29,13 @@ return [
         'title' => 'Titel',
         'title-hint' => '(Visas stort längst upp i e-posten)',
         'content' => 'Innehåll',
-        'logo-type'          => 'Logotyp Typ',
-        'browse-another'     => 'Bläddra efter en annan',
-        'paste-url'          => 'Klistra in URL',
-        'logo'               => 'Logotyp',
-        'logo-hint'          => '(Bläddra bild)',
-        'logo-url'           => 'Logotyp-URL',
-        'logo-url-hint'      => '(Klistra in bildens URL här)',
+        'logo-type' => 'Logotyp Typ',
+        'browse-another' => 'Bläddra efter en annan',
+        'paste-url' => 'Klistra in URL',
+        'logo' => 'Logotyp',
+        'logo-hint' => '(Bläddra bild)',
+        'logo-url' => 'Logotyp-URL',
+        'logo-url-hint' => '(Klistra in bildens URL här)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'E-postmalltema',
         'plural' => 'E-postmallteman',
     ],
-    
+
 ];

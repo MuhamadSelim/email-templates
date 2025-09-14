@@ -9,8 +9,11 @@ class Iframe extends Component
     protected string $view = 'vb-email-templates::forms.components.iframe';
 
     public string $name;
+
     public string $src;
+
     public string $height;
+
     public string $width;
 
     public function __construct($name, $src = null, $height = '800px', $width = '100%')

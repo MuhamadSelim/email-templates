@@ -2,8 +2,8 @@
 
 namespace Visualbuilder\EmailTemplates\Notifications;
 
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Visualbuilder\EmailTemplates\Mail\UserVerifiedEmail;
 
@@ -16,10 +16,7 @@ class UserVerifiedNotification extends Notification
      *
      * @return void
      */
-    public function __construct()
-    {
-
-    }
+    public function __construct() {}
 
     /**
      * Get the notification's delivery channels.
@@ -40,9 +37,9 @@ class UserVerifiedNotification extends Notification
      */
     public function toMail($notifiable)
     {
-       
-            return app(UserVerifiedEmail::class, ['user' => $notifiable]);
-        
+
+        return app(UserVerifiedEmail::class, ['user' => $notifiable]);
+
     }
 
     /**
@@ -55,6 +52,6 @@ class UserVerifiedNotification extends Notification
     {
         return [
 
-            ];
+        ];
     }
 }

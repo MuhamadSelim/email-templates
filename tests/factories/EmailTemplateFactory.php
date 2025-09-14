@@ -24,21 +24,21 @@ class EmailTemplateFactory extends Factory
     public function definition()
     {
         return [
-                'key' => Str::random(20),
-                'language' => config('filament-email-templates.default_locale'),
-                'view' => config('filament-email-templates.default_view'),
-                'cc' => null,
-                'bcc' => null,
-                'from' => ['email' => $this->faker->email,'name' => $this->faker->name],
-                'name' => $this->faker->name,
-                'preheader' => $this->faker->sentence,
-                'subject' => $this->faker->sentence,
-                'title' => $this->faker->sentence,
-                'content' => new HtmlString("<p>".$this->faker->text."</p>"),
-                'logo' => config('filament-email-templates.logo'),
-                'created_at' => now(),
-                'updated_at' => now(),
-                'deleted_at' => null,
+            'key' => Str::random(20),
+            'language' => config('filament-email-templates.default_locale'),
+            'view' => config('filament-email-templates.default_view'),
+            'cc' => null,
+            'bcc' => null,
+            'from' => ['email' => $this->faker->email, 'name' => $this->faker->name],
+            'name' => $this->faker->name,
+            'preheader' => $this->faker->sentence,
+            'subject' => $this->faker->sentence,
+            'title' => $this->faker->sentence,
+            'content' => new HtmlString('<p>'.$this->faker->text.'</p>'),
+            'logo' => config('filament-email-templates.logo'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'deleted_at' => null,
         ];
     }
 }

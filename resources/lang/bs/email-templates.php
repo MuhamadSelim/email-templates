@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema e-pošte',
         'plural' => 'Teme e-pošte',
     ],
-    
+
 ];

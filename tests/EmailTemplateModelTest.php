@@ -54,7 +54,7 @@ it('returns the mailable FQCN when the class exists', function () {
     $classDir = app_path('Mail/Visualbuilder/EmailTemplates');
     File::ensureDirectoryExists($classDir);
 
-    $filePath = $classDir . '/FakeMailable.php';
+    $filePath = $classDir.'/FakeMailable.php';
     File::put($filePath, "<?php\nnamespace App\\Mail\\Visualbuilder\\EmailTemplates;\nuse Illuminate\\Mail\\Mailable;\nclass FakeMailable extends Mailable {}\n");
     require_once $filePath;
 

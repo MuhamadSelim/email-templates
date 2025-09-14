@@ -29,13 +29,13 @@ return [
         'title' => 'Pavadinimas',
         'title-hint' => '(Rodo didelėje viršuje el. laiško)',
         'content' => 'Turinys',
-        'logo-type'          => 'Logotipo tipas',
-        'browse-another'     => 'Pasirinkite kitą',
-        'paste-url'          => 'Įklijuoti URL',
-        'logo'               => 'Logotipas',
-        'logo-hint'          => '（Naršyti paveikslėlį）',
-        'logo-url'           => 'Logotipo URL',
-        'logo-url-hint'      => '（Čia įklijuokite paveikslėlio URL）',
+        'logo-type' => 'Logotipo tipas',
+        'browse-another' => 'Pasirinkite kitą',
+        'paste-url' => 'Įklijuoti URL',
+        'logo' => 'Logotipas',
+        'logo-hint' => '（Naršyti paveikslėlį）',
+        'logo-url' => 'Logotipo URL',
+        'logo-url-hint' => '（Čia įklijuokite paveikslėlio URL）',
     ],
     'resource_name' => [
         'singular' => 'El. laiško šablonas',
@@ -63,5 +63,5 @@ return [
         'singular' => 'El. pašto šablono tema',
         'plural' => 'El. pašto šablono temos',
     ],
-    
+
 ];

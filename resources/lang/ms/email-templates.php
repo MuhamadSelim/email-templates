@@ -29,13 +29,13 @@ return [
         'title' => 'Tajuk',
         'title-hint' => '(Dipaparkan besar di bahagian atas emel)',
         'content' => 'Kandungan',
-        'logo-type'          => 'Jenis Logo',
-        'browse-another'     => 'Melayari yang lain',
-        'paste-url'          => 'Tampal URL',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Melayari imej)',
-        'logo-url'           => 'URL Logo',
-        'logo-url-hint'      => '(Tampal URL imej di sini)',
+        'logo-type' => 'Jenis Logo',
+        'browse-another' => 'Melayari yang lain',
+        'paste-url' => 'Tampal URL',
+        'logo' => 'Logo',
+        'logo-hint' => '(Melayari imej)',
+        'logo-url' => 'URL Logo',
+        'logo-url-hint' => '(Tampal URL imej di sini)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema Templat E-mel',
         'plural' => 'Tema Templat E-mel',
     ],
-    
+
 ];

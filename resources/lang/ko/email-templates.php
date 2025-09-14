@@ -29,13 +29,13 @@ return [
         'title' => '제목',
         'title-hint' => '(이메일 맨 위에 크게 표시됨)',
         'content' => '내용',
-        'logo-type'          => '로고 유형',
-        'browse-another'     => '다른 브라우즈',
-        'paste-url'          => 'URL 붙여 넣기',
-        'logo'               => '로고',
-        'logo-hint'          => '（이미지 브라우즈）',
-        'logo-url'           => '로고 URL',
-        'logo-url-hint'      => '（여기에 이미지 URL 붙여 넣기）',
+        'logo-type' => '로고 유형',
+        'browse-another' => '다른 브라우즈',
+        'paste-url' => 'URL 붙여 넣기',
+        'logo' => '로고',
+        'logo-hint' => '（이미지 브라우즈）',
+        'logo-url' => '로고 URL',
+        'logo-url-hint' => '（여기에 이미지 URL 붙여 넣기）',
     ],
     'resource_name' => [
         'singular' => '이메일 템플릿',
@@ -63,5 +63,5 @@ return [
         'singular' => '이메일 템플릿 테마',
         'plural' => '이메일 템플릿 테마',
     ],
-    
+
 ];

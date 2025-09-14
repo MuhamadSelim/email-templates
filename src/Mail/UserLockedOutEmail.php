@@ -9,12 +9,14 @@ use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
 
 class UserLockedOutEmail extends Mailable
 {
+    use BuildGenericEmail;
     use Queueable;
     use SerializesModels;
-    use BuildGenericEmail;
 
     public $template = 'user-locked-out';
+
     public $user;
+
     public $sendTo;
 
     /**

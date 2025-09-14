@@ -29,13 +29,13 @@ return [
         'title' => 'Título',
         'title-hint' => '(Exibido em destaque no topo do email)',
         'content' => 'Conteúdo',
-        'logo-type'          => 'Tipo de Logo',
-        'browse-another'     => 'Navegue por outro',
-        'paste-url'          => 'Cole a URL',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Navegue pela imagem)',
-        'logo-url'           => 'URL do Logo',
-        'logo-url-hint'      => '(Cole a URL da imagem aqui)',
+        'logo-type' => 'Tipo de Logo',
+        'browse-another' => 'Navegue por outro',
+        'paste-url' => 'Cole a URL',
+        'logo' => 'Logo',
+        'logo-hint' => '(Navegue pela imagem)',
+        'logo-url' => 'URL do Logo',
+        'logo-url-hint' => '(Cole a URL da imagem aqui)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema de modelo de e-mail',
         'plural' => 'Temas de modelo de e-mail',
     ],
-    
+
 ];

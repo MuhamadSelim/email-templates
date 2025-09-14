@@ -2,8 +2,8 @@
 
 namespace Visualbuilder\EmailTemplates\Resources\EmailTemplateResource\Pages;
 
-use Illuminate\Database\Eloquent\Model;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Database\Eloquent\Model;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource;
 
 class CreateEmailTemplate extends CreateRecord
@@ -12,7 +12,7 @@ class CreateEmailTemplate extends CreateRecord
 
     protected function handleRecordCreation(array $data): Model
     {
-        $emailTemplateResource = new EmailTemplateResource();
+        $emailTemplateResource = new EmailTemplateResource;
         $sortedData = $emailTemplateResource->handleLogo($data);
 
         return static::getModel()::create($sortedData);

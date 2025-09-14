@@ -19,14 +19,14 @@ it('creates a mailable class if it does not exist', function () {
     }
 
     // When: We run the createMailable method
-    $helper = new CreateMailableHelper();
+    $helper = new CreateMailableHelper;
     $response = $helper->createMailable($record);
 
     // Then: The mailable class should be created
     expect(file_exists($filePath))->toBeTrue();
-    expect($response->title)->toBe("Class generated successfully");
-    expect($response->icon)->toBe("heroicon-o-check-circle");
-    expect($response->icon_color)->toBe("success");
+    expect($response->title)->toBe('Class generated successfully');
+    expect($response->icon)->toBe('heroicon-o-check-circle');
+    expect($response->icon_color)->toBe('success');
 });
 
 it('returns an error if the mailable class already exists', function () {
@@ -40,10 +40,10 @@ it('returns an error if the mailable class already exists', function () {
     File::put($filePath, '');
 
     // When: We run the createMailable method
-    $helper = new CreateMailableHelper();
+    $helper = new CreateMailableHelper;
     $response = $helper->createMailable($record);
 
     // Then: It should return an error response
-    expect($response->icon)->toBe("heroicon-o-exclamation-circle");
-    expect($response->icon_color)->toBe("danger");
+    expect($response->icon)->toBe('heroicon-o-exclamation-circle');
+    expect($response->icon_color)->toBe('danger');
 });

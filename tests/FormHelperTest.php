@@ -35,4 +35,3 @@ it('recursively collects blade views and ignores underscore directories', functi
 
     File::deleteDirectory($baseDir);
 });
-

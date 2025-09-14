@@ -29,13 +29,13 @@ return [
         'title' => 'タイトル',
         'title-hint' => '（メールの一番上に大きく表示されます）',
         'content' => 'コンテンツ',
-        'logo-type'          => 'ロゴタイプ',
-        'browse-another'     => '別の参照',
-        'paste-url'          => 'URLを貼り付ける',
-        'logo'               => 'ロゴ',
-        'logo-hint'          => '（画像を参照）',
-        'logo-url'           => 'ロゴURL',
-        'logo-url-hint'      => '（ここに画像のURLを貼り付けてください）',
+        'logo-type' => 'ロゴタイプ',
+        'browse-another' => '別の参照',
+        'paste-url' => 'URLを貼り付ける',
+        'logo' => 'ロゴ',
+        'logo-hint' => '（画像を参照）',
+        'logo-url' => 'ロゴURL',
+        'logo-url-hint' => '（ここに画像のURLを貼り付けてください）',
     ],
     'resource_name' => [
         'singular' => 'メールテンプレート',
@@ -63,5 +63,5 @@ return [
         'singular' => 'メールテンプレートテーマ',
         'plural' => 'メールテンプレートテーマ',
     ],
-    
+
 ];

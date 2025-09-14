@@ -20,17 +20,17 @@ it('can replace tokens in user registered email', function () {
             'title' => 'Welcome to ##config.app.name##',
             'subject' => 'Welcome to ##config.app.name##',
             'preheader' => 'Lets get you started',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Thanks for registering with ##config.app.name##.</p>
                             <p>If you need any assistance please contact our customer services team ##config.email-templates.customer-services.email## who will be happy to help.</p>
                             <p>Kind Regards<br>
-                            ##config.app.name##</p>",
+                            ##config.app.name##</p>',
         ]
     );
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $mailable = new UserRegisteredEmail($user);
     $mailable->assertSeeInHtml("Dear $user->name,");
@@ -57,7 +57,7 @@ it('can replace tokens in user password reset request email', function () {
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $token = Str::random(24);
     $tokenUrl = "https://yourwebsite.com/user/password/reset/$token";
@@ -75,19 +75,19 @@ it('can replace tokens in user password reset success email', function () {
             'title' => 'Password Reset Success',
             'subject' => '##config.app.name## password has been reset',
             'preheader' => 'Success',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Your password has been reset.</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $mailable = new UserPasswordResetSuccessEmail($user);
     $mailable->assertSeeInHtml("Dear $user->name,");
-    $mailable->assertSeeInHtml("Your password has been reset.");
+    $mailable->assertSeeInHtml('Your password has been reset.');
 
 });
 
@@ -99,20 +99,20 @@ it('can replace tokens in user account locked out email', function () {
             'title' => 'Account Locked',
             'subject' => '##config.app.name## account has been locked',
             'preheader' => 'Oops!',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Sorry your account has been locked out due to too many bad password attempts.</p>
                             <p>Please contact our customer services team on ##config.email-templates.customer-services.email## who will be able to help</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $mailable = new UserLockedOutEmail($user);
     $mailable->assertSeeInHtml("Dear $user->name,");
-    $mailable->assertSeeInHtml("Sorry your account has been locked out due to too many bad password attempts.");
+    $mailable->assertSeeInHtml('Sorry your account has been locked out due to too many bad password attempts.');
 
 });
 
@@ -136,7 +136,7 @@ it('can replace tokens in user verify email', function () {
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $token = Str::random(64);
     $verificationUrl = "https://yourwebsite.com/verify-email/$user->id/$token";
@@ -153,15 +153,15 @@ it('can replace tokens in user verified email', function () {
             'title' => 'Verification Success',
             'subject' => 'Verification success for ##config.app.name##',
             'preheader' => 'Verification success for ##config.app.name##',
-            'content' => "<p>Hi ##user.name##,</p>
+            'content' => '<p>Hi ##user.name##,</p>
                             <p>Your email address ##user.email## has been verified on ##config.app.name##</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $mailable = new UserVerifiedEmail($user);
     $mailable->assertSeeInHtml($user->email);
@@ -176,17 +176,17 @@ it('can replace tokens in user logged in email', function () {
             'title' => 'Login Success',
             'subject' => 'Login Success for ##config.app.name##',
             'preheader' => 'Login Success for ##config.app.name##',
-            'content' => "<p>Hi ##user.name##,</p>
+            'content' => '<p>Hi ##user.name##,</p>
                             <p>You have been logged into ##config.app.name##.</p>
                             <p>If this was not you please contact: </p>
                             <p>You can disable this email in your account notification preferences.</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
 
     $this->makeTheme();
     $user = User::factory()->create([
-            'name' => "Michael Row"
+        'name' => 'Michael Row',
     ]);
     $mailable = new UserLoginEmail($user);
     $mailable->assertSeeInHtml("Hi $user->name,");

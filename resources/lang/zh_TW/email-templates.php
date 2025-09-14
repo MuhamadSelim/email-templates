@@ -29,13 +29,13 @@ return [
         'title' => '標題',
         'title-hint' => '（在郵件頂部顯示大字）',
         'content' => '內容',
-        'logo-type'          => '標誌類型',
-        'browse-another'     => '瀏覽其他',
-        'paste-url'          => '貼上URL',
-        'logo'               => '標誌',
-        'logo-hint'          => '(瀏覽圖片)',
-        'logo-url'           => '標誌URL',
-        'logo-url-hint'      => '(在此貼上圖片URL)',
+        'logo-type' => '標誌類型',
+        'browse-another' => '瀏覽其他',
+        'paste-url' => '貼上URL',
+        'logo' => '標誌',
+        'logo-hint' => '(瀏覽圖片)',
+        'logo-url' => '標誌URL',
+        'logo-url-hint' => '(在此貼上圖片URL)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => '電子郵件模板主題',
         'plural' => '電子郵件模板主題',
     ],
-    
+
 ];

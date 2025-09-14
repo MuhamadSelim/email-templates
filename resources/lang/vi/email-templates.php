@@ -29,13 +29,13 @@ return [
         'title' => 'Tiêu đề',
         'title-hint' => '(Hiển thị lớn ở đầu email)',
         'content' => 'Nội dung',
-        'logo-type'          => 'Loại Logo',
-        'browse-another'     => 'Duyệt qua khác',
-        'paste-url'          => 'Dán URL',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Duyệt hình ảnh)',
-        'logo-url'           => 'URL của Logo',
-        'logo-url-hint'      => '(Dán URL hình ảnh vào đây)',
+        'logo-type' => 'Loại Logo',
+        'browse-another' => 'Duyệt qua khác',
+        'paste-url' => 'Dán URL',
+        'logo' => 'Logo',
+        'logo-hint' => '(Duyệt hình ảnh)',
+        'logo-url' => 'URL của Logo',
+        'logo-url-hint' => '(Dán URL hình ảnh vào đây)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Chủ đề mẫu email',
         'plural' => 'Chủ đề mẫu email',
     ],
-    
+
 ];

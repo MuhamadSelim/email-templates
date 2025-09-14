@@ -60,10 +60,10 @@ return [
         'title-hint' => '(Es mostra gran a la part superior del correu electrònic)',
         'content' => 'Contingut',
     ],
-    
+
     'theme_resource_name' => [
         'singular' => 'Tema de plantilla de correu electrònic',
         'plural' => 'Temas de plantilles de correu electrònic',
     ],
-    
+
 ];

@@ -15,9 +15,9 @@ class UserLockoutListener
      */
     public function handle(Login $event)
     {
-        if(config('filament-email-templates.send_emails.locked_out')) {
+        if (config('filament-email-templates.send_emails.locked_out')) {
             $user = $event->user;
-            $user->notify(new UserLockoutNotification());
+            $user->notify(new UserLockoutNotification);
         }
 
     }

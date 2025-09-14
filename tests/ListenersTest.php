@@ -1,18 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Login;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Notification;
-use Visualbuilder\EmailTemplates\Tests\Models\User;
-use Visualbuilder\EmailTemplates\Notifications\UserLoginNotification;
-use Visualbuilder\EmailTemplates\Notifications\UserRegisteredNotification;
-use Visualbuilder\EmailTemplates\Notifications\UserPasswordResetNotification;
-use Visualbuilder\EmailTemplates\Notifications\UserLockoutNotification;
-use Visualbuilder\EmailTemplates\Notifications\UserVerifiedNotification;
 use Visualbuilder\EmailTemplates\Listeners\UserLockoutListener;
+use Visualbuilder\EmailTemplates\Notifications\UserLockoutNotification;
+use Visualbuilder\EmailTemplates\Notifications\UserLoginNotification;
+use Visualbuilder\EmailTemplates\Notifications\UserPasswordResetNotification;
+use Visualbuilder\EmailTemplates\Notifications\UserRegisteredNotification;
+use Visualbuilder\EmailTemplates\Notifications\UserVerifiedNotification;
+use Visualbuilder\EmailTemplates\Tests\Models\User;
 
 it('sends login notification based on config flag', function () {
     $user = User::factory()->create();

@@ -1,20 +1,18 @@
 <?php
 
 use Filament\Actions\DeleteAction;
-use Filament\Actions\RestoreAction;
 use Filament\Actions\ForceDeleteAction;
+use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Illuminate\Support\Facades\File;
-use Filament\Actions;
-
-use function Pest\Laravel\get;
-use function Pest\Livewire\livewire;
-
 use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource\Pages\CreateEmailTemplate;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource\Pages\EditEmailTemplate;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateResource\Pages\ListEmailTemplates;
+
+use function Pest\Laravel\get;
+use function Pest\Livewire\livewire;
 
 // listing tests
 it('can access email template list page', function () {
@@ -31,7 +29,7 @@ it('can list email templates', function () {
 
 // create tests
 it('can access email template create page', function () {
-    $test =get(EmailTemplateResource::getUrl('create'));
+    $test = get(EmailTemplateResource::getUrl('create'));
 
     $test->assertSuccessful();
 });
@@ -46,7 +44,7 @@ it('can create email template', function () {
             'view' => $newData->view,
             'cc' => $newData->cc,
             'bcc' => $newData->bcc,
-            //'from' => $newData->from,
+            // 'from' => $newData->from,
             'name' => $newData->name,
             'preheader' => $newData->preheader,
             'subject' => $newData->subject,
@@ -63,7 +61,7 @@ it('can create email template', function () {
         'view' => $storedData->data['view'],
         'cc' => $storedData->data['cc'],
         'bcc' => $storedData->data['bcc'],
-       //'from' => $storedData->data['from'],
+        // 'from' => $storedData->data['from'],
         'name' => $storedData->data['name'],
         'preheader' => $storedData->data['preheader'],
         'subject' => $storedData->data['subject'],
@@ -168,7 +166,7 @@ it('can preview email template', function () {
     livewire(EditEmailTemplate::class, [
         'record' => $emailTemplate->getRouteKey(),
     ])->callAction(ViewAction::class)
-    ->assertSuccessful();
+        ->assertSuccessful();
 });
 
 it('can preview user welcome email', function () {
@@ -180,11 +178,11 @@ it('can preview user welcome email', function () {
 
             'subject' => 'Welcome to ##config.app.name##',
             'preheader' => 'Lets get you started',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Thanks for registering with ##config.app.name##.</p>
                             <p>If you need any assistance please contact our customer services team ##config.email-templates.customer-services.email## who will be happy to help.</p>
                             <p>Kind Regards<br>
-                            ##config.app.name##</p>",
+                            ##config.app.name##</p>',
         ]
     );
 
@@ -235,9 +233,9 @@ it('can preview user password reset success email', function () {
             'title' => 'Password Reset Success',
             'subject' => '##config.app.name## password has been reset',
             'preheader' => 'Success',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Your password has been reset.</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
     // get(EmailTemplateResource::getUrl('view', [
@@ -261,10 +259,10 @@ it('can preview user account locked out email', function () {
             'title' => 'Account Locked',
             'subject' => '##config.app.name## account has been locked',
             'preheader' => 'Oops!',
-            'content' => "<p>Dear ##user.name##,</p>
+            'content' => '<p>Dear ##user.name##,</p>
                             <p>Sorry your account has been locked out due to too many bad password attempts.</p>
                             <p>Please contact our customer services team on ##config.email-templates.customer-services.email## who will be able to help</p>
-                                <p>Kind Regards,<br>##config.app.name##</p>",
+                                <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
     // get(EmailTemplateResource::getUrl('view', [
@@ -317,9 +315,9 @@ it('can preview user verified email', function () {
             'title' => 'Verification Success',
             'subject' => 'Verification success for ##config.app.name##',
             'preheader' => 'Verification success for ##config.app.name##',
-            'content' => "<p>Hi ##user.name##,</p>
+            'content' => '<p>Hi ##user.name##,</p>
                             <p>Your email address ##user.email## has been verified on ##config.app.name##</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
     // get(EmailTemplateResource::getUrl('view', [
@@ -342,11 +340,11 @@ it('can preview user logged in email', function () {
             'title' => 'Login Success',
             'subject' => 'Login Success for ##config.app.name##',
             'preheader' => 'Login Success for ##config.app.name##',
-            'content' => "<p>Hi ##user.name##,</p>
+            'content' => '<p>Hi ##user.name##,</p>
                             <p>You have been logged into ##config.app.name##.</p>
                             <p>If this was not you please contact: </p>
                             <p>You can disable this email in your account notification preferences.</p>
-                            <p>Kind Regards,<br>##config.app.name##</p>",
+                            <p>Kind Regards,<br>##config.app.name##</p>',
         ]
     );
     // get(EmailTemplateResource::getUrl('view', [

@@ -3,7 +3,6 @@
 namespace Visualbuilder\EmailTemplates\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 
@@ -21,20 +20,21 @@ class EmailTemplateFactory extends Factory
      *
      * @return array
      */
-    public function definition() {
+    public function definition()
+    {
         return [
-            'key'        => Str::random(20),
-            'language'   => config('filament-email-templates.default_locale'),
-            'view'       => config('filament-email-templates.default_view'),
-            'cc'         => null,
-            'bcc'        => null,
-            'from'       => ['email'=>$this->faker->email,'name'=>$this->faker->name],
-            'name'       => $this->faker->name,
-            'preheader'  => $this->faker->sentence,
-            'subject'    => $this->faker->sentence,
-            'title'      => $this->faker->sentence,
-            'content'    => "<p>".$this->faker->text."</p>",
-            'logo'       => config('filament-email-templates.logo'),
+            'key' => Str::random(20),
+            'language' => config('filament-email-templates.default_locale'),
+            'view' => config('filament-email-templates.default_view'),
+            'cc' => null,
+            'bcc' => null,
+            'from' => ['email' => $this->faker->email, 'name' => $this->faker->name],
+            'name' => $this->faker->name,
+            'preheader' => $this->faker->sentence,
+            'subject' => $this->faker->sentence,
+            'title' => $this->faker->sentence,
+            'content' => '<p>'.$this->faker->text.'</p>',
+            'logo' => config('filament-email-templates.logo'),
             'created_at' => now(),
             'updated_at' => now(),
             'deleted_at' => null,

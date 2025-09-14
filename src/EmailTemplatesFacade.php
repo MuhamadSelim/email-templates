@@ -4,7 +4,6 @@ namespace Visualbuilder\EmailTemplates;
 
 use Illuminate\Support\Facades\Facade;
 
-
 class EmailTemplatesFacade extends Facade
 {
     /**

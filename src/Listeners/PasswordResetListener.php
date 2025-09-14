@@ -3,7 +3,6 @@
 namespace Visualbuilder\EmailTemplates\Listeners;
 
 use Illuminate\Auth\Events\PasswordReset;
-
 use Visualbuilder\EmailTemplates\Notifications\UserPasswordResetNotification;
 
 class PasswordResetListener
@@ -26,11 +25,10 @@ class PasswordResetListener
      */
     public function handle(PasswordReset $event)
     {
-        if(config('filament-email-templates.send_emails.password_reset_success')) {
+        if (config('filament-email-templates.send_emails.password_reset_success')) {
             $user = $event->user;
-            $user->notify(new UserPasswordResetNotification());
+            $user->notify(new UserPasswordResetNotification);
         }
-
 
     }
 }

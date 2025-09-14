@@ -9,12 +9,14 @@ use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
 
 class UserPasswordResetSuccessEmail extends Mailable
 {
+    use BuildGenericEmail;
     use Queueable;
     use SerializesModels;
-    use BuildGenericEmail;
 
     public $template = 'user-password-reset-success';
+
     public $user;
+
     public $sendTo;
 
     /**

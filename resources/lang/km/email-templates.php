@@ -29,13 +29,13 @@ return [
         'title' => 'Title',
         'title-hint' => '(Displays large at very top of email)',
         'content' => 'Content',
-        'logo-type'          => 'ប្រភ័យ​ទីតា',
-        'browse-another'     => 'រក​ទិសទី​ផ្សេងទៀត',
-        'paste-url'          => 'បិទ URL',
-        'logo'               => 'រូបសញ្ញា',
-        'logo-hint'          => '（រកមើល​រូបភាព）',
-        'logo-url'           => 'URL​ រូបសញ្ញា',
-        'logo-url-hint'      => '（បិទ URL​ នៅ​ទីនេះ）',
+        'logo-type' => 'ប្រភ័យ​ទីតា',
+        'browse-another' => 'រក​ទិសទី​ផ្សេងទៀត',
+        'paste-url' => 'បិទ URL',
+        'logo' => 'រូបសញ្ញា',
+        'logo-hint' => '（រកមើល​រូបភាព）',
+        'logo-url' => 'URL​ រូបសញ្ញា',
+        'logo-url-hint' => '（បិទ URL​ នៅ​ទីនេះ）',
     ],
     'resource_name' => [
         'singular' => 'Email Template',
@@ -63,5 +63,5 @@ return [
         'singular' => 'ប្រធាន​ប័ណ្ណ​លិខិត​អ៊ីម៉ែល',
         'plural' => 'ប្រធាន​ប័ណ្ណ​លិខិត​អ៊ីម៉ែល',
     ],
-    
+
 ];

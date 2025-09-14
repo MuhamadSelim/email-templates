@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -13,11 +14,11 @@ return new class () extends Migration {
     public function up()
     {
         Schema::create(config('filament-email-templates.table_name'), function (Blueprint $table) {
-            $columnName = config('filament-email-templates.theme_table_name') . '_id';
+            $columnName = config('filament-email-templates.theme_table_name').'_id';
             $table->increments('id');
             $table->unsignedInteger($columnName)->nullable();
             $table->string('key', 191)->comment('Must be unique when combined with language');
-            $table->string('language', 8)->default(config('filament-email-templates.default_locale'), );
+            $table->string('language', 8)->default(config('filament-email-templates.default_locale'));
             $table->string('name', 191)->nullable()->comment('Friendly Name');
             $table->string('view', 191)->default(config('filament-email-templates.default_view'))->comment('Blade Template to load into');
             $table->json('from')->nullable()->comment('From address to override system default');

@@ -29,13 +29,13 @@ return [
         'title' => 'Tytuł',
         'title-hint' => '(Wyświetlane duże na samej górze e-maila)',
         'content' => 'Treść',
-        'logo-type'          => 'Typ logo',
-        'browse-another'     => 'Przeglądaj inne',
-        'paste-url'          => 'Wklej URL',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Przeglądaj obraz)',
-        'logo-url'           => 'URL logo',
-        'logo-url-hint'      => '(Wklej tutaj URL obrazu)',
+        'logo-type' => 'Typ logo',
+        'browse-another' => 'Przeglądaj inne',
+        'paste-url' => 'Wklej URL',
+        'logo' => 'Logo',
+        'logo-hint' => '(Przeglądaj obraz)',
+        'logo-url' => 'URL logo',
+        'logo-url-hint' => '(Wklej tutaj URL obrazu)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Szablon e-maila',
         'plural' => 'Szablony e-maili',
     ],
-    
+
 ];

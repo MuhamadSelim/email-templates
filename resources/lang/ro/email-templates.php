@@ -29,13 +29,13 @@ return [
         'title' => 'Titlu',
         'title-hint' => '(Se afișează mare în partea de sus a emailului)',
         'content' => 'Conținut',
-        'logo-type'          => 'Tip de logo',
-        'browse-another'     => 'Răsfoiește altul',
-        'paste-url'          => 'Lipește URL',
-        'logo'               => 'Logo',
-        'logo-hint'          => '(Răsfoiește imaginea)',
-        'logo-url'           => 'URL logo',
-        'logo-url-hint'      => '(Lipește URL-ul imaginii aici)',
+        'logo-type' => 'Tip de logo',
+        'browse-another' => 'Răsfoiește altul',
+        'paste-url' => 'Lipește URL',
+        'logo' => 'Logo',
+        'logo-hint' => '(Răsfoiește imaginea)',
+        'logo-url' => 'URL logo',
+        'logo-url-hint' => '(Lipește URL-ul imaginii aici)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema șablonului de e-mail',
         'plural' => 'Teme pentru șabloane de e-mail',
     ],
-    
+
 ];

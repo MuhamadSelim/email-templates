@@ -29,13 +29,13 @@ return [
         'title' => 'Kichwa',
         'title-hint' => '(Inaonyeshwa kubwa kabisa juu ya barua pepe)',
         'content' => 'Yaliyomo',
-        'logo-type'          => 'Aina ya Nembo',
-        'browse-another'     => 'Vinjari nyingine',
-        'paste-url'          => 'Bandika URL',
-        'logo'               => 'Nembo',
-        'logo-hint'          => '(Vinjari picha)',
-        'logo-url'           => 'URL ya Nembo',
-        'logo-url-hint'      => '(Bandika URL ya picha hapa)',
+        'logo-type' => 'Aina ya Nembo',
+        'browse-another' => 'Vinjari nyingine',
+        'paste-url' => 'Bandika URL',
+        'logo' => 'Nembo',
+        'logo-hint' => '(Vinjari picha)',
+        'logo-url' => 'URL ya Nembo',
+        'logo-url-hint' => '(Bandika URL ya picha hapa)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Mada ya Kielelezo cha Barua pepe',
         'plural' => 'Mada za Kielelezo cha Barua pepe',
     ],
-    
+
 ];

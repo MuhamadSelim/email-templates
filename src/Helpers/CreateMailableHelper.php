@@ -10,7 +10,7 @@ use Visualbuilder\EmailTemplates\Contracts\CreateMailableInterface;
 
 class CreateMailableHelper implements CreateMailableInterface
 {
-    public const STUB_PATH = __DIR__."/../Stubs/MailableTemplate.stub";
+    public const STUB_PATH = __DIR__.'/../Stubs/MailableTemplate.stub';
 
     public function createMailable($record)
     {
@@ -22,19 +22,19 @@ class CreateMailableHelper implements CreateMailableInterface
             $filePath = app_path(config('filament-email-templates.mailable_directory')."/$className.php");
 
             if (file_exists($filePath)) {
-                return $this->response("Class already exists", "heroicon-o-exclamation-circle", "danger", $filePath);
+                return $this->response('Class already exists', 'heroicon-o-exclamation-circle', 'danger', $filePath);
             }
 
             $classContent = str_replace(['{{className}}', '{{template-key}}'], [$className, $record->key], File::get(self::STUB_PATH));
 
             File::put($filePath, $classContent);
 
-            return $this->response("Class generated successfully", "heroicon-o-check-circle", "success", $filePath);
+            return $this->response('Class generated successfully', 'heroicon-o-check-circle', 'success', $filePath);
 
         } catch (Exception $e) {
             Log::error($e->getMessage());
 
-            return $this->response("Error: ".$e->getMessage(), "heroicon-o-exclamation-circle", "danger");
+            return $this->response('Error: '.$e->getMessage(), 'heroicon-o-exclamation-circle', 'danger');
         }
     }
 
@@ -47,10 +47,10 @@ class CreateMailableHelper implements CreateMailableInterface
     private function response($title, $icon, $icon_color, $body)
     {
         return (object) [
-            "title" => $title,
-            "icon" => $icon,
-            "icon_color" => $icon_color,
-            "body" => $body,
+            'title' => $title,
+            'icon' => $icon,
+            'icon_color' => $icon_color,
+            'body' => $body,
         ];
     }
 }

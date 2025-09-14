@@ -3,11 +3,10 @@
 namespace Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages;
 
 use Filament\Actions\DeleteAction;
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource;
 use Illuminate\Database\Eloquent\Model;
 use Visualbuilder\EmailTemplates\Models\EmailTemplateTheme;
+use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource;
 
 class EditEmailTemplateTheme extends EditRecord
 {
@@ -24,11 +23,12 @@ class EditEmailTemplateTheme extends EditRecord
     {
         $record->update($data);
 
-        if($data['is_default']) {
+        if ($data['is_default']) {
             EmailTemplateTheme::where('id', '!=', $record->id)
-                                ->where('is_default', true)
-                                ->update(['is_default' => false]);
+                ->where('is_default', true)
+                ->update(['is_default' => false]);
         }
+
         return $record;
     }
 }

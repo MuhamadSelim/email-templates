@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Visualbuilder\EmailTemplates\Contracts;
 
 interface TokenReplacementInterface

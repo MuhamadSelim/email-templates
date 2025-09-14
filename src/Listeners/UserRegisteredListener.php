@@ -15,11 +15,10 @@ class UserRegisteredListener
      */
     public function handle(Registered $event)
     {
-        if(config('filament-email-templates.send_emails.new_user_registered')) {
+        if (config('filament-email-templates.send_emails.new_user_registered')) {
             $user = $event->user;
-            $user->notify(new UserRegisteredNotification());
+            $user->notify(new UserRegisteredNotification);
         }
-
 
     }
 }

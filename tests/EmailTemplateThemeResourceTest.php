@@ -1,14 +1,14 @@
 <?php
 
-use function Pest\Laravel\get;
-use function Pest\Livewire\livewire;
-
+use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 use Visualbuilder\EmailTemplates\Models\EmailTemplateTheme;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource;
-use Visualbuilder\EmailTemplates\Models\EmailTemplate;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\CreateEmailTemplateTheme;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\EditEmailTemplateTheme;
 use Visualbuilder\EmailTemplates\Resources\EmailTemplateThemeResource\Pages\ListEmailTemplateThemes;
+
+use function Pest\Laravel\get;
+use function Pest\Livewire\livewire;
 
 // listing tests
 it('can access email template theme list page', function () {
@@ -176,4 +176,3 @@ it('toggling is_default resets other themes', function () {
         'is_default' => false,
     ]);
 });
-

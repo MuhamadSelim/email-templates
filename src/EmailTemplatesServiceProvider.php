@@ -2,7 +2,6 @@
 
 namespace Visualbuilder\EmailTemplates;
 
-use Visualbuilder\EmailTemplates\Contracts\TokenReplacementInterface;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
@@ -10,7 +9,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Visualbuilder\EmailTemplates\Commands\InstallCommand;
 use Visualbuilder\EmailTemplates\Contracts\CreateMailableInterface;
 use Visualbuilder\EmailTemplates\Contracts\FormHelperInterface;
-
+use Visualbuilder\EmailTemplates\Contracts\TokenReplacementInterface;
 use Visualbuilder\EmailTemplates\Helpers\CreateMailableHelper;
 use Visualbuilder\EmailTemplates\Helpers\FormHelper;
 
@@ -18,8 +17,8 @@ class EmailTemplatesServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name("filament-email-templates")
-            ->hasMigrations(['create_email_templates_themes_table','create_email_templates_table'])
+        $package->name('filament-email-templates')
+            ->hasMigrations(['create_email_templates_themes_table', 'create_email_templates_table'])
             ->hasConfigFile(['filament-email-templates'])
             ->hasAssets()
             ->hasTranslations()
@@ -35,7 +34,6 @@ class EmailTemplatesServiceProvider extends PackageServiceProvider
         parent::packageRegistered();
 
         $this->loadJsonTranslationsFrom(__DIR__.'/../resources/lang/');
-
 
         $this->app->singleton(CreateMailableInterface::class, CreateMailableHelper::class);
         $this->app->singleton(FormHelperInterface::class, FormHelper::class);
@@ -56,7 +54,7 @@ class EmailTemplatesServiceProvider extends PackageServiceProvider
             $this->getAssets()
         );
 
-        if($this->app->runningInConsole()) {
+        if ($this->app->runningInConsole()) {
             $this->publishResources();
         }
 
@@ -66,15 +64,15 @@ class EmailTemplatesServiceProvider extends PackageServiceProvider
     protected function publishResources()
     {
         $this->publishes([
-                            __DIR__
-                            .'/../database/seeders/EmailTemplateSeeder.php' => database_path('seeders/EmailTemplateSeeder.php'),
-                            __DIR__.'/../database/seeders/EmailTemplateThemeSeeder.php' => database_path('seeders/EmailTemplateThemeSeeder.php'),
-                        ], 'filament-email-templates-seeds');
+            __DIR__
+            .'/../database/seeders/EmailTemplateSeeder.php' => database_path('seeders/EmailTemplateSeeder.php'),
+            __DIR__.'/../database/seeders/EmailTemplateThemeSeeder.php' => database_path('seeders/EmailTemplateThemeSeeder.php'),
+        ], 'filament-email-templates-seeds');
 
         $this->publishes([
-                            __DIR__.'/../media/' => public_path('media/email-templates'),
-                            __DIR__.'/../resources/views' => resource_path('views/vendor/vb-email-templates'),
-                        ], 'filament-email-templates-assets');
+            __DIR__.'/../media/' => public_path('media/email-templates'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/vb-email-templates'),
+        ], 'filament-email-templates-assets');
     }
 
     /**
@@ -83,7 +81,7 @@ class EmailTemplatesServiceProvider extends PackageServiceProvider
     protected function getAssets(): array
     {
         return [
-                Css::make('vb-email-templates-styles', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css'),
+            Css::make('vb-email-templates-styles', 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css'),
 
         ];
     }

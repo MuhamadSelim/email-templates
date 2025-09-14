@@ -5,9 +5,8 @@ namespace Visualbuilder\EmailTemplates\Tests\Models;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable as LaravelNotifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Notifications\Notifiable as LaravelNotifiable;
 use Orchestra\Testbench\Factories\UserFactory;
 
 /**
@@ -17,7 +16,6 @@ use Orchestra\Testbench\Factories\UserFactory;
  */
 class User extends Authenticatable implements FilamentUser
 {
-
     use HasFactory, LaravelNotifiable;
 
     protected $guarded = [];

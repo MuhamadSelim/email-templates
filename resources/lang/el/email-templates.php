@@ -64,5 +64,5 @@ return [
         'singular' => 'Θέμα προτύπου email',
         'plural' => 'Θέματα προτύπων email',
     ],
-    
+
 ];

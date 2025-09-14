@@ -29,13 +29,13 @@ return [
         'title' => 'Гарчиг',
         'title-hint' => '(Имэйлын дээд талд ихээр харагдах)',
         'content' => 'Агуулга',
-        'logo-type'          => 'Лого Төрөл',
-        'browse-another'     => 'Өөрийг сонгоно уу',
-        'paste-url'          => 'URL оруулах',
-        'logo'               => 'Лого',
-        'logo-hint'          => '(Зургийг сонгоно уу)',
-        'logo-url'           => 'Лого URL',
-        'logo-url-hint'      => '(Зургийн URL-г оруулна уу)',
+        'logo-type' => 'Лого Төрөл',
+        'browse-another' => 'Өөрийг сонгоно уу',
+        'paste-url' => 'URL оруулах',
+        'logo' => 'Лого',
+        'logo-hint' => '(Зургийг сонгоно уу)',
+        'logo-url' => 'Лого URL',
+        'logo-url-hint' => '(Зургийн URL-г оруулна уу)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'И-мэйл загварын төрөл',
         'plural' => 'И-мэйл загварын төрлүүд',
     ],
-    
+
 ];

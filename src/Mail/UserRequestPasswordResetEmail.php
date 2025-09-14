@@ -9,13 +9,16 @@ use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
 
 class UserRequestPasswordResetEmail extends Mailable
 {
+    use BuildGenericEmail;
     use Queueable;
     use SerializesModels;
-    use BuildGenericEmail;
 
     public $user;
+
     public $tokenUrl;
+
     public $template = 'user-request-reset';
+
     public $sendTo;
 
     /**

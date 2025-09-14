@@ -29,13 +29,13 @@ return [
         'title' => 'Título',
         'title-hint' => '(Exibido em grande no topo do email)',
         'content' => 'Conteúdo',
-        'logo-type'          => 'Tipo de Logótipo',
-        'browse-another'     => 'Navegar outro',
-        'paste-url'          => 'Colar URL',
-        'logo'               => 'Logótipo',
-        'logo-hint'          => '(Navegar imagem)',
-        'logo-url'           => 'URL do Logótipo',
-        'logo-url-hint'      => '(Colar URL da imagem aqui)',
+        'logo-type' => 'Tipo de Logótipo',
+        'browse-another' => 'Navegar outro',
+        'paste-url' => 'Colar URL',
+        'logo' => 'Logótipo',
+        'logo-hint' => '(Navegar imagem)',
+        'logo-url' => 'URL do Logótipo',
+        'logo-url-hint' => '(Colar URL da imagem aqui)',
 
     ],
     'resource_name' => [
@@ -64,5 +64,5 @@ return [
         'singular' => 'Tema de modelo de e-mail',
         'plural' => 'Temas de modelo de e-mail',
     ],
-    
+
 ];

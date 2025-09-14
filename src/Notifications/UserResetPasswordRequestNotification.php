@@ -2,8 +2,8 @@
 
 namespace Visualbuilder\EmailTemplates\Notifications;
 
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Visualbuilder\EmailTemplates\Mail\UserRequestPasswordResetEmail;
 
@@ -42,7 +42,7 @@ class UserResetPasswordRequestNotification extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new UserRequestPasswordResetEmail($notifiable, $this->tokenUrl));
+        return new UserRequestPasswordResetEmail($notifiable, $this->tokenUrl);
     }
 
     /**
@@ -53,6 +53,6 @@ class UserResetPasswordRequestNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        return [ ];
+        return [];
     }
 }

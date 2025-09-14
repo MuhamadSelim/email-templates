@@ -1,10 +1,11 @@
 <?php
 
+use Filament\Actions\DeleteAction;
+use Filament\Actions\RestoreAction;
+use Filament\Actions\ForceDeleteAction;
+use Filament\Actions\ViewAction;
+use Illuminate\Support\Facades\File;
 use Filament\Actions;
-use Filament\Pages\Actions\DeleteAction;
-use Filament\Pages\Actions\ForceDeleteAction;
-
-use Filament\Pages\Actions\RestoreAction;
 
 use function Pest\Laravel\get;
 use function Pest\Livewire\livewire;
@@ -166,7 +167,7 @@ it('can preview email template', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailTemplate->getRouteKey(),
-    ])->callAction(Actions\ViewAction::class)
+    ])->callAction(ViewAction::class)
     ->assertSuccessful();
 });
 
@@ -190,7 +191,7 @@ it('can preview user welcome email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('Thanks for registering with');
 });
@@ -220,7 +221,7 @@ it('can preview user password reset request email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('You are receiving this email because we received a password reset request for your account');
 });
@@ -246,7 +247,7 @@ it('can preview user password reset success email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('Your password has been reset');
 });
@@ -273,7 +274,7 @@ it('can preview user account locked out email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('Sorry your account has been locked out due to too many bad password attempts');
 
@@ -303,7 +304,7 @@ it('can preview user verify email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('To activate your account please click the button below');
 });
@@ -328,7 +329,7 @@ it('can preview user verified email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('has been verified on');
 });
@@ -355,7 +356,7 @@ it('can preview user logged in email', function () {
     $this->makeTheme();
     livewire(EditEmailTemplate::class, [
         'record' => $emailData->getRouteKey(),
-    ])->mountAction(Actions\ViewAction::class, ['
+    ])->mountAction(ViewAction::class, ['
         record' => $emailData,
     ])->assertSee('You have been logged into');
 });
@@ -363,8 +364,8 @@ it('can preview user logged in email', function () {
 it('deletes previous logo when updated', function () {
     $relativePath = 'media/email-templates/logos/old-logo.png';
     $fullPath = storage_path('app/public/'.$relativePath);
-    \Illuminate\Support\Facades\File::ensureDirectoryExists(dirname($fullPath));
-    \Illuminate\Support\Facades\File::put($fullPath, 'fake');
+    File::ensureDirectoryExists(dirname($fullPath));
+    File::put($fullPath, 'fake');
 
     $emailTemplate = EmailTemplate::factory()->create([
         'logo' => $relativePath,

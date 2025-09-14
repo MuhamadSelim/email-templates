@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\PasswordReset;
@@ -61,7 +62,7 @@ it('sends lockout notification based on config flag', function () {
     $user = User::factory()->create();
 
     Notification::fake();
-    \Illuminate\Support\Facades\Event::listen(Login::class, UserLockoutListener::class);
+    Event::listen(Login::class, UserLockoutListener::class);
     config(['filament-email-templates.send_emails.locked_out' => true]);
     event(new Login('web', $user, false));
     Notification::assertSentTo($user, UserLockoutNotification::class);

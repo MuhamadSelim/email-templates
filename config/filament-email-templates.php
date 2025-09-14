@@ -1,6 +1,7 @@
 <?php
 
-use Filament\Pages\SubNavigationPosition;
+use Filament\Pages\Enums\SubNavigationPosition;
+use App\Models\User;
 use Visualbuilder\EmailTemplates\DefaultTokenHelper;
 
 return [
@@ -130,7 +131,7 @@ return [
 
     //Notifiable Models who can receive emails
     'recipients' => [
-        App\Models\User::class,
+        User::class,
     ],
 
     /**
